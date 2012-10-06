@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[hisasann's github blog]]></title>
-  <link href="http://hisasann.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: nikki | hisasann's github blog]]></title>
+  <link href="http://hisasann.github.com/blog/categories/nikki/atom.xml" rel="self"/>
   <link href="http://hisasann.github.com/"/>
   <updated>2012-10-06T22:41:39+09:00</updated>
   <id>http://hisasann.github.com/</id>
