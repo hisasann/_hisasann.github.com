@@ -4,7 +4,7 @@
   <title><![CDATA[hisasann's github blog]]></title>
   <link href="http://hisasann.github.com/atom.xml" rel="self"/>
   <link href="http://hisasann.github.com/"/>
-  <updated>2012-10-15T16:21:59+09:00</updated>
+  <updated>2012-10-15T16:22:51+09:00</updated>
   <id>http://hisasann.github.com/</id>
   <author>
     <name><![CDATA[hisasann]]></name>
@@ -18,17 +18,20 @@
     <link href="http://hisasann.github.com/blog/2012/10/06/first-post/"/>
     <updated>2012-10-06T22:39:00+09:00</updated>
     <id>http://hisasann.github.com/blog/2012/10/06/first-post</id>
-    <content type="html"><![CDATA[<p><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm" target="_blank">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a>
-<a href="http://os0x.github.com/2012/04/01/new-blog/">Octopressとgithub Pagesを使ったブログ - 0xff.toBlog()</a>
-このあたりを読んでみて、githubでもブログが書けるのかと関心していたので、まずはその環境を作ってみた。</p>
+    <content type="html"><![CDATA[<p><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm" target="_blank">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></p>
+
+<p><a href="http://os0x.github.com/2012/04/01/new-blog/">Octopressとgithub Pagesを使ったブログ - 0xff.toBlog()</a></p>
+
+<p>このあたりを読んでみて、githubでもブログが書けるのかと関心していたので、まずはその環境を作ってみた。</p>
 
 <p>ほとんどの内容は<a href="http://www.sankitch.me/blog/2012/05/05/build-octopress-on-github-dropbox/" target="_blank">Octopress + Github Pages + Dropbox でブログを構築 - M-x sankitch-info</a>こちらの記事と同じ。
 すごく参考になりました！</p>
 
 <h2>Repositoryを作る</h2>
 
-<p><a href="https://github.com/new" target="_blank">Create a New Repository</a>
-から</p>
+<p><a href="https://github.com/new" target="_blank">Create a New Repository</a></p>
+
+<p>から</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>[username].github.com</span></code></pre></td></tr></table></div></figure>
@@ -126,10 +129,13 @@
 
 <h2>独自ドメインにしてみる</h2>
 
-<p><a href="http://tanarky.com/blog/2011/10/29/002_github_blogofile_original_domain/" target="_blank">githubとblogofileで独自ドメイン無料Blog環境構築 - tanarky.com</a>
-<a href="https://github.com/blog/315-cname-support-for-github-pages" target="_blank">CNAME support for GitHub Pages</a>
-<a href="http://www.sankitch.me/blog/2012/05/05/build-octopress-on-github-dropbox/" target="_blank">Octopress + Github Pages + Dropbox でブログを構築 - M-x sankitch-info</a>
-このあたりを読むと分かるのですが、リポジトリに「CNAME」ファイルを追加して、中身に、</p>
+<p><a href="http://tanarky.com/blog/2011/10/29/002_github_blogofile_original_domain/" target="_blank">githubとblogofileで独自ドメイン無料Blog環境構築 - tanarky.com</a></p>
+
+<p><a href="https://github.com/blog/315-cname-support-for-github-pages" target="_blank">CNAME support for GitHub Pages</a></p>
+
+<p><a href="http://www.sankitch.me/blog/2012/05/05/build-octopress-on-github-dropbox/" target="_blank">Octopress + Github Pages + Dropbox でブログを構築 - M-x sankitch-info</a></p>
+
+<p>このあたりを読むと分かるのですが、リポジトリに「CNAME」ファイルを追加して、中身に、</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>www.hisasann.com</span></code></pre></td></tr></table></div></figure>
