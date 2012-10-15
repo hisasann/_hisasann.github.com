@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>初めてのポストだよ - hisasann's github blog</title>
+  <title>githubを使って独自ブログをはじめる方法メモ - hisasann's github blog</title>
   <meta name="author" content="hisasann">
 
   
-  <meta name="description" content="てすとてすと hoge 1
-mkdir username.github.com ">
+  <meta name="description" content="Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ
+Octopressとgithub Pagesを使ったブログ - 0xff.toBlog()
+このあたりを読んでみて、githubでもブログが書けるのかと関心していたので、まずはその環境を作ってみた。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,7 +69,7 @@ mkdir username.github.com ">
   
   <header>
     
-      <h1 class="entry-title">初めてのポストだよ</h1>
+      <h1 class="entry-title">Githubを使って独自ブログをはじめる方法メモ</h1>
     
     
       <p class="meta">
@@ -91,14 +92,145 @@ mkdir username.github.com ">
   </header>
 
 
-<div class="entry-content"><p>てすとてすと</p>
+<div class="entry-content"><p><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm" target="_blank">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a>
+<a href="http://os0x.github.com/2012/04/01/new-blog/">Octopressとgithub Pagesを使ったブログ - 0xff.toBlog()</a>
+このあたりを読んでみて、githubでもブログが書けるのかと関心していたので、まずはその環境を作ってみた。</p>
 
-<hr />
+<p>ほとんどの内容は<a href="http://www.sankitch.me/blog/2012/05/05/build-octopress-on-github-dropbox/" target="_blank">Octopress + Github Pages + Dropbox でブログを構築 - M-x sankitch-info</a>こちらの記事と同じ。
+すごく参考になりました！</p>
 
-<blockquote><p>hoge</p></blockquote>
+<h2>Repositoryを作る</h2>
+
+<p><a href="https://github.com/new" target="_blank">Create a New Repository</a>
+から</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir username.github.com</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[username].github.com</span></code></pre></td></tr></table></div></figure>
+
+
+<p>という名前でリポジトリを作成する。</p>
+
+<h2>Octopressをインストール</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'>cd octopress
+</span><span class='line'>
+</span><span class='line'>sudo gem install bundler
+</span><span class='line'>bundle install
+</span><span class='line'>
+</span><span class='line'>rake install
+</span><span class='line'>rake setup_github_pages
+</span><span class='line'>
+</span><span class='line'>#gitリポジトリのURLを入力
+</span><span class='line'>
+</span><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>ブログの設定をする</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
+</span><span class='line'>vim _config.yml</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ためしに以下のようにしてみました。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>url: http://hisasann.github.com
+</span><span class='line'>title: hisasann's github blog
+</span><span class='line'>subtitle: 開発コードの断片保存場所
+</span><span class='line'>author: hisasann</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>記事を書いてみる</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>octopress/source/_posts</span></code></pre></td></tr></table></div></figure>
+
+
+<p>に「2012-10-06-first-post.markdown」というファイルを作成し、中に</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>---
+</span><span class='line'>layout: post
+</span><span class='line'>title: "これはテスト記事です"
+</span><span class='line'>date: 2012-10-06 1:00
+</span><span class='line'>comments: true
+</span><span class='line'>categories:
+</span><span class='line'>---
+</span><span class='line'>テスト</span></code></pre></td></tr></table></div></figure>
+
+
+<p>のようにmarkdown記法で記事を書きます。</p>
+
+<p>そして、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>で記事をpushします。</p>
+
+<p>これで、<a href="http://hisasann.github.com/" target="_blank">hisasann&#8217;s github blog</a>にアクセスすると記事が投稿されています！</p>
+
+<h2>独自ドメインにしてみる</h2>
+
+<p><a href="http://tanarky.com/blog/2011/10/29/002_github_blogofile_original_domain/" target="_blank">githubとblogofileで独自ドメイン無料Blog環境構築 - tanarky.com</a>
+<a href="https://github.com/blog/315-cname-support-for-github-pages" target="_blank">CNAME support for GitHub Pages</a>
+<a href="http://www.sankitch.me/blog/2012/05/05/build-octopress-on-github-dropbox/" target="_blank">Octopress + Github Pages + Dropbox でブログを構築 - M-x sankitch-info</a>
+このあたりを読むと分かるのですが、リポジトリに「CNAME」ファイルを追加して、中身に、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>www.hisasann.com</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と記載し、ドメインASPにサブドメインを追加しておくと、このURLでアクセスすることができます。</p>
+
+<p><a href="http://www.hisasann.com/" target="_blank">hisasann&#8217;s github blog</a></p>
+
+<p>こんな感じです。</p>
+
+<h2>まとめ</h2>
+
+<p>ローカルでパブリッシュするタイプのブログですが、比較楽に環境を構築できるのですが、
+いろんなMacなどでブログを書く方とかの場合は</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>をやらないといけないデメリットはありますが、それを考えても楽だし、github上にブログを持てるのはちょっぴりオシャレ！</p>
+
+<h2>参考リンク</h2>
+
+<ul>
+<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/" target="_blank">Octopressのインストールから運用管理まで - T.I.D.</a></li>
+</ul>
 
 </div>
 
@@ -127,7 +259,7 @@ mkdir username.github.com ">
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/nikki/'>nikki</a>
+    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/nikki/'>nikki</a>
   
 </span>
 
@@ -159,7 +291,7 @@ mkdir username.github.com ">
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/10/06/first-post/">初めてのポストだよ</a>
+        <a href="/blog/2012/10/06/first-post/">githubを使って独自ブログをはじめる方法メモ</a>
       </li>
     
   </ul>
